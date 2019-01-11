@@ -127,14 +127,14 @@ def train_similarity_w2v():
             return [int(i) for i in x[1:-1].split(", ")]
     train_set.Index =train_set.Index.apply(strToList)
     
-    def strToList(x):
+    def strToStrList(x):
         """
         Transform '['a','b']' into ['a','b']
         """
         if type(x)==str:
             return x[2:-2].split("', '")
-    data.Name = data.Name.apply(strToList)
-    data.Description = data.Description.apply(strToList)
+    data.Name = data.Name.apply(strToStrList)
+    data.Description = data.Description.apply(strToStrList)
     
     #Prediction model
     model = MultinomialNB()
@@ -229,5 +229,6 @@ def train_similarity_w2v():
 
 
 
+    
 
 
