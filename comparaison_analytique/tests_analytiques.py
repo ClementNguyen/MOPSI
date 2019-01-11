@@ -1,11 +1,11 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/comparaison-analytique-images')
+os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/MOPSI/comparaison_analytique')
 import hausdorff_test as haus
-os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/comparaison-analytique-images')
+os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/MOPSI/comparaison_analytique')
 import keras_with_vgg as ker
-os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/comparaison-analytique-images')
+os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/python/MOPSI/comparaison_analytique')
 import mse_ssim as ms
 os.chdir('D:/Sasha/Documents/ENPC/IMI/MOPSI/data/iphone')#dossier contenant les images
 
