@@ -24,17 +24,19 @@ def detect(image):
         percentages.append(result[k].split(': ')[1])
     print(names)
     print(percentages)
+    for k in range(len(percentages)) :
+        percentages[k]=int(percentages[k][:-1])/100
     return(names,percentages)
 
+#renvoie True si les deux images ont un élément en commun, avec la proba que ce soit vrai
 def similarite(image1,image2):
     time1=time.time()
-    names1=detect(image1)[0]
+    names1,percentages1=detect(image1)
     img1=mpimg.imread("predictions.jpg")
-    names2=detect(image2)[0]
+    names2,percentages2=detect(image2)
     img2=mpimg.imread("predictions.jpg")
     plt.figure()
     plt.imshow(img1)
-    plt.show()
     plt.figure()
     plt.imshow(img2)
     plt.show()
@@ -42,7 +44,7 @@ def similarite(image1,image2):
         for j in range(len(names2)):
             if names1[i]==names2[j] :
                 print(time.time()-time1)
-                return True
+                return True,percentages1[i]*percentages2[j]
     print(time.time()-time1)
     return False
                 
