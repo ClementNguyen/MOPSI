@@ -12,7 +12,6 @@ os.chdir(dossier)
 def detect(image):
     #utilisation de yolo-tiny v3
     result = subprocess.check_output(['./darknet','detect','cfg/yolov3-tiny.cfg','yolov3-tiny.weights','data/'+image])
-    
     #analyse des résultats
     result=str(result).split('seconds.')[1]
     result=result.split("\\n")
